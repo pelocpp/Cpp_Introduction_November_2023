@@ -3,15 +3,27 @@
 #include "Time.h"     // system file: < >
 
 
-void testTime()
+void testTime01()
 {
     // ein erstes Objekt
-    Time pause;
+    Time pause;    // I need a constructor without parameters (0:0:0) - default constructor
+
+    // to intitialize: NO // to construct: Konstruktor  // constructor
+    Time anotherPause(99999, 0, 0);  // object creation AND intitialization
+
+    Time thirdPause(13, 0);  // object creation AND intitialization
+
+    pause.setStunden(11, 999);
 
     // Zugriff auf das Objekt:  Punkt-Operator '.'
-    pause.m_hours = 10;
-    pause.m_minutes = 30;
-    pause.m_seconds = 0;
+    
+    // pause.m_hours = 99999;   // error
+    // but:
+    pause.setHours(12);
+    //pause.m_minutes = 0;
+    //pause.m_seconds = 0;
+    pause.setMinutes(0);
+    pause.setSeconds(0);
 
     pause.print();
 
@@ -19,16 +31,19 @@ void testTime()
     Time thisEvening;
 
     // Zugriff auf das Objekt:  Punkt-Operator '.'
-    thisEvening.m_hours = 17;
-    thisEvening.m_minutes = 0;
-    thisEvening.m_seconds = 0;
+    //thisEvening.m_hours = 17;
+    //thisEvening.m_minutes = 0;
+    //thisEvening.m_seconds = 0;
+    thisEvening.setHours(17);
+    thisEvening.setMinutes(0);
+    thisEvening.setSeconds(0);
 
     thisEvening.print();
 }
 
 int main()
 {
-    testTime();
+    testTime01();
 
     // console output
     // << operator    // <===

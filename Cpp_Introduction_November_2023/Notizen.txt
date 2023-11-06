@@ -6,6 +6,10 @@ Peter Loos
 
 =====================================
 
+So zwischen 12 und 13 Uhr
+
+=====================================
+
 C/C++    Java  C#  Mobile Programming
 
 =====================================
@@ -107,5 +111,25 @@ Methoden:
 
 // =============================================
 
-OO: Kennt einen Schutz von Daten
+OO: Kennt einen Schutz von Daten  // Making Data secure
+
+Access Rights:
+
+
+// =============================================
+
+Beispiel:
+
+Programming STYLE
+
+this : usage of this
+
+I would prefer another programming STYLE
+
+
+m_stunden:  member
+
+stunden:    parameter
+
+// =============================================
 

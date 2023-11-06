@@ -1,0 +1,42 @@
+Guten Morgen
+
+Einführung in C++
+
+Peter Loos
+
+=====================================
+
+C/C++    Java  C#  Mobile Programming
+
+=====================================
+
+2 Tools:
+
+a) Visual Studio C++
+
+b) Github: Repository - "Jungfern-Seminar"
+
+   i)  Für dieses Seminar
+   ii) Mit Vorlagen zum Kopieren / zum Nachschlagen (NEU)
+
+Github:
+
+https://github.com/pelocpp
+
+
+Feedback:
+
+== Vorrausetzungen
+
+== Was sind meine Erwartungen
+
+== Was fehlt ???
+
+
+=== 10 Uhr / 17 Uhr:  FEEDBACK
+
+=== Python // C# (Konzepte)
+
+Lambda, 
+
+

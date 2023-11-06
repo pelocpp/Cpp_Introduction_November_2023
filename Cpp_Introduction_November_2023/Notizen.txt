@@ -40,3 +40,72 @@ Feedback:
 Lambda, 
 
 
+=====================================
+
+Hello - World.
+
+=====================================
+
+Klassen und Objekt
+
+>> Daten
+
+    e.g. Adresse
+
+>> Funktionen // besser: Methoden
+
+    changeAddress
+
+OO Programmierung:
+   Daten + Methoden (Funktion) zusammenzufassen
+   in einem EINZIGEN Konstrukt
+
+
+Klasse:  Beschreibung von Daten + Funktionen (Implementierung)
+
+class Person
+
+Ich will einen 'Person' haben:   Person hans;   // OBJEKT der KLASSE
+
+OBJEKT synonym:  INSTANZ
+
+=====================================
+
+In C++: 2 Dateien
+
+Anders als in C#, Java
+
+Header-File  :  Description
+
+Implementierungs-Datei:  Implementierung
+
+
+
+=====================================
+
+Beispiel:   Uhrzeit   // Time
+
+Daten:
+
+Stunden   //  Hours
+Minuten   //  Minutes
+Sekunden  //  Seconds
+
+Methoden:
+
+= Ausgabe in der Konsole (print)
+
+= Eine Uhrzeit: Eine Sekunde weiterschlalten 
+
+     increment  // move 1 second forward
+
+     10:08:58   ==> 10:08:59      ==> 10:08:60  FALSCH  // Korrekt: 10:09:00      
+
+= Vergleichen // compare
+
+= reset: Alles Werte auf Null setzen
+
+// =============================================
+
+OO: Kennt einen Schutz von Daten
+

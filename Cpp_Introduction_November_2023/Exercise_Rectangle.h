@@ -41,7 +41,7 @@ namespace Rectangle {
         bool isSquare();
         void moveTo(double, double);
         Point center();
-        Rectangle intersection(const Rectangle&);
+        // Rectangle intersection(Rectangle);
         void print();
     };
 }

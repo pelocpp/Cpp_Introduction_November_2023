@@ -3,6 +3,8 @@
 #include "Time.h"     // system file: < >
 
 
+int testRectangle();
+
 void testTime01()
 {
     // ein erstes Objekt
@@ -43,11 +45,13 @@ void testTime01()
 
 int main()
 {
-    testTime01();
+    testRectangle();
 
-    // console output
-    // << operator    // <===
-    std::cout << "Hallo Seminar";
+    //testTime01();
+
+    //// console output
+    //// << operator    // <===
+    //std::cout << "Hallo Seminar";
 
     return 123;
 }

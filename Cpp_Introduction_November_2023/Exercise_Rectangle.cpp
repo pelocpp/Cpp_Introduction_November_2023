@@ -7,8 +7,21 @@
 namespace Rectangle {
 
     // c'tor(s)
-    Rectangle::Rectangle() : Rectangle(0.0, 0.0, 0.0, 0.0) {}
+    //Rectangle::Rectangle() 
+    //{
+    //    m_x = 0;
+    //    m_y = 0;
+    //    m_width = 0;
+    //    m_height = 0;
+    //}
 
+    // calling a neighbourhood constructor
+    Rectangle::Rectangle() : Rectangle(0.0, 0.0, 0.0, 0.0)
+    {
+        // empty body
+    }
+
+    // ==================>      0         0         0             0
     Rectangle::Rectangle(double x, double y, double width, double height)
     {
         m_x = x;
@@ -31,8 +44,11 @@ namespace Rectangle {
 
     // getter/setter
     double Rectangle::getX() { return m_x; }
+
     double Rectangle::getY() { return m_y; }
+
     double Rectangle::getWidth() { return m_width; }
+
     double Rectangle::getHeight() { return m_height; }
 
     void Rectangle::setX(double x)
@@ -68,8 +84,13 @@ namespace Rectangle {
     // methods
     void Rectangle::moveTo(double x, double y)
     {
-        m_x += x;
-        m_y += y;
+        //m_x += x;
+        //m_y += y;
+
+        // same as
+
+        m_x = m_x + x;
+        m_y = m_y + y;
     }
 
     double Rectangle::circumference()
@@ -84,7 +105,13 @@ namespace Rectangle {
 
     bool Rectangle::isSquare()
     {
-        return m_width == m_height;
+        bool result = false;  // true, false
+
+        // return m_width == m_height;
+
+        result = (m_width == m_height);
+
+        return result;
     }
 
     Point Rectangle::center()
@@ -92,9 +119,9 @@ namespace Rectangle {
         double x = m_x + m_width / 2.0;
         double y = m_y + m_height / 2.0;
 
-        Point center(x, y);
+        Point result(x, y);   // creation & constuctor
 
-        return center;
+        return result;
     }
 
 
@@ -105,52 +132,52 @@ namespace Rectangle {
         );
     }
 
-    Rectangle Rectangle::intersection(const Rectangle& rect)
-    {
-        if (m_y + m_height < rect.m_y) {
-            Rectangle empty;
-            return empty;
-        }
-        else if (m_y > rect.m_y + rect.m_height) {
-            Rectangle empty;
-            return empty;
-        }
+    //Rectangle Rectangle::intersection(Rectangle rect)
+    //{
+    //    if (m_y + m_height < rect.m_y) {
+    //        Rectangle empty;
+    //        return empty;
+    //    }
+    //    else if (m_y > rect.m_y + rect.m_height) {
+    //        Rectangle empty;
+    //        return empty;
+    //    }
 
-        if (m_x + m_width < rect.m_x) {
-            Rectangle empty;
-            return empty;
-        }
-        else if (rect.m_x + rect.m_width < m_x) {
-            Rectangle empty;
-            return empty;
-        }
+    //    if (m_x + m_width < rect.m_x) {
+    //        Rectangle empty;
+    //        return empty;
+    //    }
+    //    else if (rect.m_x + rect.m_width < m_x) {
+    //        Rectangle empty;
+    //        return empty;
+    //    }
 
-        double left, width;
+    //    double left, width;
 
-        if (m_x < rect.m_x) {
-            left = rect.m_x;
-            width = m_x + m_width - left;
-        }
-        else {
-            left = m_x;
-            width = rect.m_x + rect.m_width - left;
-        }
+    //    if (m_x < rect.m_x) {
+    //        left = rect.m_x;
+    //        width = m_x + m_width - left;
+    //    }
+    //    else {
+    //        left = m_x;
+    //        width = rect.m_x + rect.m_width - left;
+    //    }
 
-        double top, height;
+    //    double top, height;
 
-        if (m_y < rect.m_y) {
-            top = rect.m_y;
-            height = m_y + m_height - top;
-        }
-        else {
-            top = m_y;
-            height = rect.m_y + rect.m_height - top;
-        }
+    //    if (m_y < rect.m_y) {
+    //        top = rect.m_y;
+    //        height = m_y + m_height - top;
+    //    }
+    //    else {
+    //        top = m_y;
+    //        height = rect.m_y + rect.m_height - top;
+    //    }
 
-        Rectangle result(left, top, width, height);
+    //    Rectangle result(left, top, width, height);
 
-        return result;
-    }
+    //    return result;
+    //}
 
     void Rectangle::print()
     {

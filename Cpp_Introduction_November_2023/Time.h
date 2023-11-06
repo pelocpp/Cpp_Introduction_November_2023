@@ -26,8 +26,8 @@ public:
     // constructors can be overloaded (several constructors == same method name !!!)
 
     Time();
-   Time(int hours, int minutes, int seconds = 1) ;
- //   Time(int hours, int minutes);   // seconds should be 0
+    Time(int hours, int minutes, int seconds = 1) ;
+    //   Time(int hours, int minutes);   // seconds should be 0
 
     // getter // setter
     int getSeconds() { return m_seconds; }
@@ -38,6 +38,14 @@ public:
     void setHours(int hours);
 
     void setStunden(int stunden, int any);   // method: paramater: stunden  // conflict
+
+    // compare 2 Time Objects (equal, not equal)
+    // Motivation 2: passing parameters
+
+    bool compare(Time t1, Time t2);
+
+    bool compare(Time& t1, Time& t2);
+
 
     // methods:  Schnittstellen der Methoden
     // Name der Methode, Parameter, Rückgabetyp

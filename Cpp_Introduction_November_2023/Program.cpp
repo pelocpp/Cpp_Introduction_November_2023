@@ -2,10 +2,19 @@
 
 #include "Time.h"     // system file: < >
 
+void testPointers();
+void testReferences();
+void testPointersSizes();
+
+void helloWorld()
+{
+    // console output
+    std::cout << "Hallo Seminar";
+}
 
 int testRectangle();
 
-void testTime01()
+void testTime()
 {
     // ein erstes Objekt
     Time pause;    // I need a constructor without parameters (0:0:0) - default constructor
@@ -45,13 +54,10 @@ void testTime01()
 
 int main()
 {
-    testRectangle();
-
-    //testTime01();
-
-    //// console output
-    //// << operator    // <===
-    //std::cout << "Hallo Seminar";
+    testReferences();
+    //helloWorld();
+    //testTime();
+    //testRectangle();
 
     return 123;
 }

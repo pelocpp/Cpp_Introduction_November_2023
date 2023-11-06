@@ -133,5 +133,45 @@ stunden:    parameter
 
 // =============================================
 
-15:35
+Pointer and References
+
+C:   Pointer
+
+C++: Reference
+
+Beobachung: C ist in C++ enthalten ==> In C++ haben wir Pointer UND Referenzen
+
+Wichtig bei dynamischem Speicher
+
+-----------------------------------
+
+void* malloc ( int size );
+
+
+Frage: Wollen wir Speicher für int, double, Time, Rectangle, ....
+
+Hack:  int*
+
+Nein: Weil man nicht weiß, wofür der Speicher eigentlich ist:
+
+     Aus Sicht von malloc:  void *  // Festlegung.
+
+
+Wieviele Byte hat ein Rectangle:   sizeof (int)   sizeof (Rectangle)
+
+// ======================================================
+
+Was ist eine Referenz ???
+
+What is a Reference
+
+A) Es ist ein Alias-Name für eine andere Variable (Objekt)
+   It's an alias (name) for another variable (object)
+
+B) Intern:  Haben wir eine Adresse
+   Intern:  We have an address
+
+C) Schreibweise: EINFACHER als Pointer (Zeiger)
+   Notation:     Simpler than Pointer - Syntax
+
 

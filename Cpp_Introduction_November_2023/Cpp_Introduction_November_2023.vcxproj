@@ -134,6 +134,7 @@
     <ClCompile Include="Exercise_Rectangle.cpp" />
     <ClCompile Include="Exercise_Rectangle_Test.cpp" />
     <ClCompile Include="Program.cpp" />
+    <ClCompile Include="References_and_Pointers.cpp" />
     <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>

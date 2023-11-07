@@ -176,3 +176,112 @@ C) Schreibweise: EINFACHER als Pointer (Zeiger)
 
 
 =====================================
+
+Wie kann ich statische Daten und die Klasse BankAccount zusammenführen ?
+
+Wer vergibt eine Kontonummer ???
+
+Die Sparkasse:
+
+Information: Welche Kontonummer ist als nächstes verfügbar ???
+
+Beispiel:  12345  ==> 12346
+
+Frage:  Habe bereits viele BankAccount-Objekte ....
+
+
+=====================================
+
+
+Ich möchte zwei Konten vergleichen   // compare two accounts
+
+A) Gleichheit:  Kontonummern sind gleich und Balance   // equal
+
+b) Kleiner oder größer:  "Wer hat mehr Geld"   // who has more money  // less-than or greate-than
+
+
+==>   Parameter
+
+
+=====================================
+
+Was ist eines der prinzipiellen Probleme von C++:
+
+Es entstehen Kopien - an vielen Stellen, wo man es nicht möchte.
+---------------------------------------------------------------
+
+A) Die SW läuft (kein Fehler)
+
+B) PERFORMANCE
+
+
+Warum kennen zB Java und C# dieses Problem nicht ??????????
+
+i) Java, C#,...  DON'T HAVE OBJECTS ON THE STACK
+
+   Diese Sprachen kennen NUR DYNAMISCHE OBJEKTE  ( new, delete // malloc / free )
+
+   HIER WERDEN NUR POINTER KOPIERT (KEINE DATENBEREICHE)
+
+
+
+ii) C++ ist komplizierter als Java und C#
+
+
+=====================================
+
+Call-by-Reference:
+
+A) Okay, ich kann auf dieses Weise auf das Original zugreifen.
+
+b) Aber / UND: Diese Übergabe von Paramtern ist auch SCHNELLER  !!!!!!!!!!
+
+BETTER PERFORMANCE.
+
+=====================================
+
+
+Error	C2662	'void BankAccount::deposit(double)': 
+
+
+cannot convert 'this' pointer from 'const BankAccount' to 'BankAccount &'
+
+
+=====================================
+
+Was ist der tiefere Grund von 'const'
+
+Gibt es da etwas Wichtiges ???
+
+Ja:  Je mehr 'const' im Programm verwenden, umso besser kann der Compiler OPTIMIEREN !!!
+
+Pipeling:  
+
+=====================================
+
+Der Adreßoperator & bei Referenzen
+
+=====================================
+
+    tmp = anInteger;
+00007FF741E9A92B  mov         eax,dword ptr [anInteger]  
+00007FF741E9A92E  mov         dword ptr [tmp],eax  
+
+    tmp = rSomeRef;
+00007FF741E9A931  mov         rax,qword ptr [rSomeRef]  
+00007FF741E9A935  mov         eax,dword ptr [rax]  
+00007FF741E9A937  mov         dword ptr [tmp],eax  
+
+
+=====================================
+
+Referenzen:
+
+A) Ja, bitte verwenden
+
+B) Es ist nur ein '&' am Datentyp notwendig.
+
+C) mit 'const' kann ist das Original schützen.
+
+D) Unter uns: geht auch ohne Referenz --- läuft etwas langsamer
+

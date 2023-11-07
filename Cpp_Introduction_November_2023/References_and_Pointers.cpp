@@ -5,6 +5,61 @@
 #include "Exercise_Rectangle.h"
 
 
+// timesTwo: call-by-value
+void malZwei(int number)
+{
+    number = number * 2;
+}
+
+// timesTwo: call-by-reference
+// NOTE: Only a single character ('&') must be added
+void malZweiRef(int& number)
+{
+    number = number * 2;
+}
+
+void testMalZwei()
+{
+    int a = 123;
+
+    std::cout << a << std::endl;
+
+    malZwei(a);
+
+    std::cout << a << std::endl;
+
+    malZweiRef(a);
+
+    std::cout << a << std::endl;
+
+}
+
+void referencesAndAddressOperator()
+{
+    int anInteger = 0;
+    int& rSomeRef = anInteger;
+
+    anInteger = 123;
+    std::cout << "anInteger:  " << anInteger << std::endl;
+    std::cout << "rSomeRef:   " << rSomeRef << std::endl;
+
+    std::cout << "&anInteger: " << &anInteger << std::endl;
+    std::cout << "&rSomeRef:  " << &rSomeRef << std::endl;
+
+    int tmp = 0;
+
+    tmp = anInteger;
+
+    tmp = rSomeRef;
+}
+
+
+
+
+
+
+// ======================================
+
 void testPointers()
 {
     int n;

@@ -85,6 +85,41 @@ void updateInterest (int days);
 auf. Der Parameter `days` gibt die Anzahl der Tage an, für die die Zinsen gutgeschrieben werden.
 
 
+### Erweiterung: Zwei Konto-Objekte vergleichen
+
+Wir haben bereits eine Methode `equals` kennen gelernt,
+um zwei Bankkonto-Objekte vergleichen zu können.
+
+Dies wollen wir nun erweitern &ndash; und mit Hilfe der Syntax für Operatoren
+auch lesbarer gestalten:
+
+Realisieren Sie für die Klasse `BankAccount` 6 Operatoren
+
+
+`==`, `!=`, `<`, `<=`, `>` und `>=`.
+
+Dabei soll gelten:
+
+  * Zwei Konto-Objekte sind *gleich*, wenn *alle* ihre Instanzvariablen gleich sind,
+    die Kontonummer ausgenommen.
+
+  * Ein Konto-Objekt sind *kleiner-oder-gleich* als ein anderes Konto-Objekt,
+    wenn die korrespondieren Kontostände (`m_balance`) kleiner oder gleich sind.
+
+
+*Beispiel*:
+
+```cpp
+BankAccount accountJohn (12345);
+BankAccount accountJack (12346);
+accountJohn.deposit(50);
+accountJack.deposit(25);
+...
+if (accountJohn < accountJack) {
+    std::cout << "John has more money than Kack :)" << std::endl;
+}
+```
+
 
 ### Weiterarbeit
 

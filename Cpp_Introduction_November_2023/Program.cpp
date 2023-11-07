@@ -2,10 +2,18 @@
 
 #include "Time.h"     // system file: < >
 
+#include "Math.h"
+
+
 void testPointers();
 void testReferences();
 void testPointersSizes();
 void testBankAccount();
+void testStatic();
+void testBankAccount2();
+void testBankAccount3();
+void testMalZwei();
+void referencesAndAddressOperator();
 
 void helloWorld()
 {
@@ -55,7 +63,11 @@ void testTime()
 
 int main()
 {
-    testBankAccount();
+    referencesAndAddressOperator();
+    //testMalZwei();
+    //testBankAccount3();
+    //testStatic();
+    // testBankAccount();
     //testReferences();
     //helloWorld();
     //testTime();

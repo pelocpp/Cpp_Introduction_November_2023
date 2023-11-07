@@ -5,6 +5,7 @@
 void testPointers();
 void testReferences();
 void testPointersSizes();
+void testBankAccount();
 
 void helloWorld()
 {
@@ -54,7 +55,8 @@ void testTime()
 
 int main()
 {
-    testReferences();
+    testBankAccount();
+    //testReferences();
     //helloWorld();
     //testTime();
     //testRectangle();

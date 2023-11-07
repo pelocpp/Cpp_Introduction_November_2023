@@ -132,52 +132,52 @@ namespace Rectangle {
         );
     }
 
-    //Rectangle Rectangle::intersection(Rectangle rect)
-    //{
-    //    if (m_y + m_height < rect.m_y) {
-    //        Rectangle empty;
-    //        return empty;
-    //    }
-    //    else if (m_y > rect.m_y + rect.m_height) {
-    //        Rectangle empty;
-    //        return empty;
-    //    }
+    Rectangle Rectangle::intersection(Rectangle rect)
+    {
+        if (m_y + m_height < rect.m_y) {
+            Rectangle empty;
+            return empty;
+        }
+        else if (m_y > rect.m_y + rect.m_height) {
+            Rectangle empty;
+            return empty;
+        }
 
-    //    if (m_x + m_width < rect.m_x) {
-    //        Rectangle empty;
-    //        return empty;
-    //    }
-    //    else if (rect.m_x + rect.m_width < m_x) {
-    //        Rectangle empty;
-    //        return empty;
-    //    }
+        if (m_x + m_width < rect.m_x) {
+            Rectangle empty;
+            return empty;
+        }
+        else if (rect.m_x + rect.m_width < m_x) {
+            Rectangle empty;
+            return empty;
+        }
 
-    //    double left, width;
+        double left, width;
 
-    //    if (m_x < rect.m_x) {
-    //        left = rect.m_x;
-    //        width = m_x + m_width - left;
-    //    }
-    //    else {
-    //        left = m_x;
-    //        width = rect.m_x + rect.m_width - left;
-    //    }
+        if (m_x < rect.m_x) {
+            left = rect.m_x;
+            width = m_x + m_width - left;
+        }
+        else {
+            left = m_x;
+            width = rect.m_x + rect.m_width - left;
+        }
 
-    //    double top, height;
+        double top, height;
 
-    //    if (m_y < rect.m_y) {
-    //        top = rect.m_y;
-    //        height = m_y + m_height - top;
-    //    }
-    //    else {
-    //        top = m_y;
-    //        height = rect.m_y + rect.m_height - top;
-    //    }
+        if (m_y < rect.m_y) {
+            top = rect.m_y;
+            height = m_y + m_height - top;
+        }
+        else {
+            top = m_y;
+            height = rect.m_y + rect.m_height - top;
+        }
 
-    //    Rectangle result(left, top, width, height);
+        Rectangle result(left, top, width, height);
 
-    //    return result;
-    //}
+        return result;
+    }
 
     void Rectangle::print()
     {

@@ -21,10 +21,10 @@ Folgende C++&ndash;-Sprachmittel sollen zum Einsatz kommen:
 Betrachten Sie Details in der Arbeitsweise der Klasse `BankAccount` an folgendem Beispiel:
 
 ```cpp
-BankAccount myACcount (12345);
-myACcount.deposit(50);
-myACcount.withdraw(25);
-myACcount.print();
+BankAccount myAccount (12345);
+myAccount.deposit(50);
+myAccount.withdraw(25);
+myAccount.print();
 ```
 
 *Ausgabe*:
@@ -54,9 +54,9 @@ Wie könnte man dies in einer Verbesserung der `withdraw`-Methode zum Ausdruck br
 
 
 ```cpp
-BankAccount myACcount (12345);
-myACcount.deposit(25);
-bool succeeded = myACcount.withdraw(50);
+BankAccount myAccount (12345);
+myAccount.deposit(25);
+bool succeeded = myAccount.withdraw(50);
 if (! succeeded) {
     std::cout << "Need more money :)" << std::endl;
 }

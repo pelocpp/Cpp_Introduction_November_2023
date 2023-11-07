@@ -63,6 +63,7 @@
   <ItemGroup>
     <None Include="Exercise_Rectangle.md" />
     <None Include="Exercise_Bankkonto.md" />
+    <None Include="Exercise_Zeichenketten.md" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\Notizen.txt" />

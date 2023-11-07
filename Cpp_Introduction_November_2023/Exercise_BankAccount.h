@@ -24,8 +24,8 @@ public:
 
     // getter / setter
     double getAccountNumber() const;
-    double getBalance();
-    double getInterestRate();
+    double getBalance() const;
+    double getInterestRate() const;
 
     // public interface
     void deposit(double amount);
@@ -38,9 +38,15 @@ public:
 
     // compare two accounts - using references
     bool equals(const BankAccount& other);
-};
 
-// int BankAccount::lastNumber = 10'000;
+    // operators
+    friend bool operator== (const BankAccount& left, BankAccount right);
+    friend bool operator!= (const BankAccount& left, BankAccount right);
+    friend bool operator<  (const BankAccount& left, BankAccount right);
+    friend bool operator<= (const BankAccount& left, BankAccount right);
+    friend bool operator>  (const BankAccount& left, BankAccount right);
+    friend bool operator>= (const BankAccount& left, BankAccount right);
+};
 
 // ===========================================================================
 // End-of-File

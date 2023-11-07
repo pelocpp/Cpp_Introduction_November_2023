@@ -115,8 +115,8 @@ BankAccount accountJack (12346);
 accountJohn.deposit(50);
 accountJack.deposit(25);
 ...
-if (accountJohn < accountJack) {
-    std::cout << "John has more money than Kack :)" << std::endl;
+if (accountJohn > accountJack) {
+    std::cout << "John has more money than Jack :)" << std::endl;
 }
 ```
 

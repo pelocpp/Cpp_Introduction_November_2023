@@ -33,12 +33,13 @@ double BankAccount::getAccountNumber() const
     return m_number;
 }
 
-double BankAccount::getBalance() 
+double BankAccount::getBalance() const
 {
     return m_balance;
 }
 
-double BankAccount::getInterestRate() {
+double BankAccount::getInterestRate() const
+{
 
     return m_interestRate;
 }
@@ -123,7 +124,55 @@ bool BankAccount::equals(const BankAccount& other)
     }
 
     return true;
+}
+
+// operators
+bool operator== (const BankAccount& left, BankAccount right)
+{
+    if (left.m_balance != right.m_balance) {
+        return false;
     }
+    else if (left.m_interestRate != right.m_interestRate) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+bool operator!= (const BankAccount& left, BankAccount right)
+{
+    return ! (left == right);
+}
+
+bool operator< (const BankAccount& left, BankAccount right)
+{
+    if (left.m_balance != right.m_balance) {
+        return false;
+    }
+    else if (left.m_interestRate != right.m_interestRate) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+bool operator<= (const BankAccount& left, BankAccount right)
+{
+    return (left < right) || (left == right);
+}
+
+bool operator>  (const BankAccount& left, BankAccount right)
+{
+    return ! (left <= right);
+}
+
+bool operator>= (const BankAccount& left, BankAccount right)
+{
+    return !(left < right);
+}
+
 
 
 // ===========================================================================

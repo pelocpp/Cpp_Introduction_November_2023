@@ -175,3 +175,4 @@ C) Schreibweise: EINFACHER als Pointer (Zeiger)
    Notation:     Simpler than Pointer - Syntax
 
 
+=====================================

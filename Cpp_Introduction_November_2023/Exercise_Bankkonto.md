@@ -7,9 +7,9 @@ Zielsetzung ist eine Klasse `BankAccount`, die ein Bankkonto repräsentiert.
 Ein Bankkonto hat eine Kontonummer und einen Kontostand.
 Es soll möglich sein, Geldbeträge einzahlen und abheben zu können.
 Auskünfte über das Bankkonto lassen sich bzgl. Kontonummer und Kontostand einholen.
-Die Informationen des Kontos lassen sich in einer Konsole ausgeben.
+Die Informationen des Kontos lassen sich in der Konsole ausgeben.
 
-## Beschreibung
+### Beschreibung
 
 Folgende C++&ndash;-Sprachmittel sollen zum Einsatz kommen:
 
@@ -41,16 +41,16 @@ Bei der Kontoeröffnung ist die Kontonummer zu übergeben (dies werden wir verbess
 
 *Hinweise*:
 
-einzahlen: engl. &ldquo;to deposit&rdquo;
-abheben: engl. &ldquo;to withdraw&rdquo;
-Kontostand: engl. &ldquo;balance&rdquo;
+einzahlen: engl. &ldquo;*to deposit*&rdquo;<br />
+abheben: engl. &ldquo;*to withdraw*&rdquo;<br />
+Kontostand: engl. &ldquo;*balance*&rdquo;
 
-## Erweiterung
+### Erweiterung
 
 Die Methode zum Abheben (`withdraw`) schlägt fehl, wenn auf dem Konto nicht genügend Geld vorhanden ist.
-Wie könnte man dies in einer Verbesserung der `withdraw`-Schnittstelle zum Ausdruck bringen?
+Wie könnte man dies in einer Verbesserung der `withdraw`-Methode zum Ausdruck bringen?
 
-*Hinweise:
+*Hinweise*:
 
 
 ```cpp
@@ -63,14 +63,14 @@ if (! succeeded) {
 ```
 
 
-## Erweiterung
+### Erweiterung
 
 Wir ergänzen nun die Klasse `BankAccount` um den Aspekt *Zinsen*.
 Da der Zinsatz variieren kann, fügen wir der Klasse eine Methode
 `setInterestRate` hinzu:
 
 ```cpp
-void setInterestRate (double rate);
+void setInterestRate (double rate);  // stellt den aktuellen Zinsatz ein
 ```
 
 Damit ist der Zinssatz im Konto vorhanden bzw. akualisiert.
@@ -82,14 +82,13 @@ rufen wir die Methode
 void updateInterest (int days);
 ```
 
-auf. Der Parameter gibt die Anzahl der Tage an, für die Zinsen gutgeschrieben werden.
+auf. Der Parameter `days` gibt die Anzahl der Tage an, für die die Zinsen gutgeschrieben werden.
 
 
 
-## Weiterarbeit
+### Weiterarbeit
 
   * Die Klasse `Account` vergibt die Kontonummern selbst
-  * Ein Konto mit `std::cout` auf der Konsole ausgeben
   * Zwei Konto-Objekte vergleichen
+  * Ein Konto mit `std::cout` auf der Konsole ausgeben
   * Mehrere Konten in einem Array verwalten.
-

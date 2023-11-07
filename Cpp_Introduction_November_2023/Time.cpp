@@ -119,3 +119,82 @@ void Time::print()
     std::printf("%02d:%02d:%02d\n", m_hours, m_minutes, m_seconds);
 }
 
+bool Time::equals(const Time& other)
+{
+    if (m_hours != other.m_hours) {
+        return false;
+    }
+    else if (m_minutes != other.m_minutes) {
+        return false;
+    }
+    else if (m_seconds != other.m_seconds) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+// As member of class Time
+//bool Time::operator == (const Time& other)
+//{
+//    if (m_hours != other.m_hours) {
+//        return false;
+//    }
+//    else if (m_minutes != other.m_minutes) {
+//        return false;
+//    }
+//    else if (m_seconds != other.m_seconds) {
+//        return false;
+//    }
+//    else {
+//        return true;
+//    }
+//}
+
+
+
+// Als globale Funktion
+//bool operator == (const Time& left, const Time& right)
+//{
+//    if (left.m_hours != right.m_hours) {
+//        return false;
+//    }
+//    else if (left.m_minutes != right.m_minutes) {
+//        return false;
+//    }
+//    else if (left.m_seconds != right.m_seconds) {
+//        return false;
+//    }
+//    else {
+//        return true;
+//    }
+//}
+
+
+bool Time::operator != (const Time& other)
+{
+    //bool result = ! equals(other);
+    //return result;
+
+    bool result = ! (*this == other);
+    return result;
+}
+
+
+// global funtion - using public interface (using setters)
+bool operator == ( const Time& left,  const Time& right)
+{
+    if (left.getHours() != right.getHours()) {
+        return false;
+    }
+    else if (left.getMinutes() != right.getMinutes()) {
+        return false;
+    }
+    else if (left.getSeconds() != right.getSeconds()) {
+        return false;
+    }
+    else {
+        return true;
+    }
+}

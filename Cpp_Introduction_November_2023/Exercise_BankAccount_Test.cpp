@@ -51,10 +51,15 @@ void testBankAccount3()
     secondAccount.deposit(200);
     secondAccount.print();
 
-    if ( firstAccount.equals (secondAccount) == true ) {
+    if ( firstAccount.equals (secondAccount)  ) {
 
         // sind gleich
     }
+
+    //if (firstAccount == secondAccount ) {
+
+    //    // sind gleich
+    //}
 
 }
 

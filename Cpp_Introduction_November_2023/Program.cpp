@@ -14,6 +14,7 @@ void testBankAccount2();
 void testBankAccount3();
 void testMalZwei();
 void referencesAndAddressOperator();
+void testOperators();
 
 void helloWorld()
 {
@@ -61,9 +62,30 @@ void testTime()
     thisEvening.print();
 }
 
+void testOperators()
+{
+    Time t1(9, 0, 0);
+
+    Time t2(12, 0, 0);
+
+    if (t1.equals(t2)) {
+
+        std::cout << "Gleichheit";
+    }
+    else {
+        std::cout << "Ungleichheit";
+    }
+
+    if (t1 == t2) {
+
+        std::cout << "Gleichheit";
+    }
+
+}
+
 int main()
 {
-    referencesAndAddressOperator();
+    //referencesAndAddressOperator();
     //testMalZwei();
     //testBankAccount3();
     //testStatic();
@@ -72,6 +94,7 @@ int main()
     //helloWorld();
     //testTime();
     //testRectangle();
+    testOperators();
 
     return 123;
 }

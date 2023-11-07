@@ -285,3 +285,97 @@ C) mit 'const' kann ist das Original schützen.
 
 D) Unter uns: geht auch ohne Referenz --- läuft etwas langsamer
 
+================================================================
+
+Beobachtung:
+
+// comparison: Equality
+if ( firstAccount.equals (secondAccount) == true ) {
+
+    // sind gleich
+}
+
+// 
+if ( firstAccount == secondAccount ) {
+
+    // sind gleich
+}
+
+Überladen von Operatoren:  // Overloading of Operators
+------------------------------------------------------
+
+Time // Uhrzeit
+
+Time t1, t2:
+
+if (t1 == t2)
+
+if (t1 < t2)
+
+
+Wie geht das ???
+
+A) Wir das Schreiben einer "normalen" Method
+
+B) Was ist der Name dieser "normalen" Methode:  
+
+    'operator' '=='  oder
+    'operator' '<'  oder
+
+
+Geht für fast alle Operatoren von C/C++:
+
+Time = t1 + t2;
+
+
+Achtung:
+
+Ziel:
+
+    if (t1 == t2) {
+
+        std::cout << "Gleichheit";
+    }
+
+Würde ich eine equals-Methode verwenden:
+
+    if (t1.equals (t2)) {
+
+        std::cout << "Gleichheit";
+    }
+
+
+-----------------------------
+
+A) Wenn ich der Besitzer der Klasse bin:
+
+   Ich kann die Klasse erweitern ...
+
+B) Ich bin NICHT der Besitzer der Klasse:
+
+   Auch dann kann man Operatoren überladen:
+
+   Als globale Funktionen :)
+
+
+=========================================================
+
+Feature: 
+
+Friendship ===  VORSICHT.
+
+Es werden alle PRIVATEN Daten für einen "Freund"
+
+PUBLIC zur Verfügung gestellt.
+
+=========================================================
+
+Fazit:
+
+Operatoren überladen:
+
+A) In der Klasse
+
+B) Als globale Funktion (friend)
+
+=========================================================

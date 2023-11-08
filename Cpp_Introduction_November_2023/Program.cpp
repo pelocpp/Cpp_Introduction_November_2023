@@ -15,6 +15,7 @@ void referencesAndAddressOperator();
 void testOperators();
 void testString();
 void additionalTestString();
+void testDateToWord();
 
 void helloWorld()
 {
@@ -95,7 +96,8 @@ int main()
     //testRectangle();
     //testOperators();
     //testString();
-    additionalTestString();
+    // additionalTestString();
+    testDateToWord();
 
     return 123;
 }

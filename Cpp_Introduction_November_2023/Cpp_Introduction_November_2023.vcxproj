@@ -164,6 +164,12 @@
   <ItemGroup>
     <Text Include="..\Notizen.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\DynamicArray.png" />
+    <Image Include="..\DynamicArray_02.png" />
+    <Image Include="..\New_01.png" />
+    <Image Include="..\New_02.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

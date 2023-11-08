@@ -104,4 +104,18 @@
   <ItemGroup>
     <Text Include="..\Notizen.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\DynamicArray.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\DynamicArray_02.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\New_01.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\New_02.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

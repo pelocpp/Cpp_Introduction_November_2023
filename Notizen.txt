@@ -504,4 +504,122 @@ Oft: SAME Functionality either with a method or an operator
 
      ( eqals // operator ==  )
 
-10:50 
+=====================================
+
+Dynamische Speicherverwaltung:
+
+new   ==>   1 Variable
+new[N] ==>  N Variables   N muss konstant sein
+
+Ich erhalte in beiden Fällen einen Zeiger:
+
+int *ip;
+
+INTERESSANTES SPRACHFEATURE:
+
+Mit einem Zeiger (Anfangsadresse) kann ich SYNTAKTISCH
+wie mit einem Feld (Array) arbeiten:
+
+With a pointer i can work the same way like with an array:
+
+==================================================
+
+By the way:
+
+Maschinenraum von C++
+
+==================================================
+
+Es gibt new in 2 Ausprägungen:
+
+new    ==>   1 Variable    scalar new
+new[N] ==>   N Variables   array new
+
+Es gibt delete in 2 Ausprägungen:
+
+delete ptr;      // <=== scalar new  
+delete[] ptr;    // <=== array new  
+
+==================================================
+
+C++ ist eine der kompliziertesten Sprachen.
+
+Ein Beispiel:
+
+a) calling new[]
+b) calling delete (according to new[])
+
+UB
+
+Undefined Behaviour
+
+===========================================================
+
+Eine Anwendung // ein Gebrauch von dynamischen Daten:
+
+new-Aufruf:  Zeiger (Halde)
+
+Beispiel:
+
+Ein - in C/C++ eingebautes Feld:
+
+int numbers[10];    // built-in array
+
+FIXED SIZE
+
+Lösung für ein Feld dynamischer Länge: wir schreiben eine Klasse.
+
+AChtung:
+
+Neben dem Konstruktor benötigen wir einen Destuktor:
+
+Um den mit new belegten Speicherplatz freizugeben !!!
+
+Der Aufruf des Destruktors wird AUTOMATISCH abgesetzt !!!
+
+Zugriff auf die Daten des dynamischen Arrays:
+
+Mit at.
+
+"Here references are shining"
+
+
+"Here operator overloading is shining"
+
+// ================================================
+
+Heap:
+
+How is the heap managed ?????????????????????
+
+== Simple: By us  // with the help of new and delete.
+
+
+Destructor:
+
+How are the Destructor calls managed ?????????????????????
+
+== Automatically: The calls are generated automatically.
+
+== BUT: The contents of the Destructor: we are responsible.
+
+// ================================================
+
+Lifetime  // Lebenszeit von Objekten:
+
+A) Globales Objekt:
+
+Konstruktoren werden VOR main gerufen.
+Destruktoren werden NACH main gerufen.
+
+B) Lokales Objekt:
+
+Konstruktoren werden bei Objekterzeugung gerufen.
+Destruktoren werden am Ende des Blocks gerufen.
+
+C) Dynamisches Objekt:
+
+Konstruktoren werden bei der Objekterzeugung mit NEW gerufen.
+Destruktoren werden beim Aufruf von delete gerufen.
+
+// ================================================

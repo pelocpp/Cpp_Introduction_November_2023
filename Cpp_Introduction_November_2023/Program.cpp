@@ -17,6 +17,8 @@ void testString();
 void additionalTestString();
 void testDateToWord();
 void testDynamicArray();
+void testDynamic();
+void dynamicDataExample();
 
 void helloWorld()
 {
@@ -86,6 +88,8 @@ void testOperators()
 
 int main()
 {
+    std::cout << "Begin" << std::endl;
+
     //referencesAndAddressOperator();
     //testMalZwei();
     //testBankAccount3();
@@ -99,8 +103,12 @@ int main()
     //testString();
     //additionalTestString();
     //testDynamicArray();
+    // testDynamic();
+    dynamicDataExample();
     
-    testDateToWord();
+    //testDateToWord();
 
-    return 123;
+    std::cout << "End" << std::endl;
+
+    return 1;
 }

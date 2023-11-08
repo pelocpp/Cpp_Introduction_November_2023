@@ -7,8 +7,38 @@ void additionalTestString()
     // Zeichenkette nach int umwandeln
     // "12345"
 
-    std::string s ("12345");
-    int value = std::stoi(s);
+    int value = -1;
+
+    try
+    {
+        std::string s("###");
+        value = std::stoi(s);
+    }
+    catch (std::out_of_range ex)   // specific handlers
+    {
+        std::cout << "std::out_of_range ???";
+        std::cout << ex.what();
+
+    }
+    catch (std::invalid_argument ex)  // specific handlers
+    {
+        std::cout << "Expected valid format of an int string";
+        std::cout << ex.what();
+
+    }
+    catch (std::exception)          // general purpose handler
+    {
+        // an unexpected exception occurred
+        std::cout << "Bin hier";
+    }
+
+
+    std::cout << "Hier geht es weiter ...";
+
+
+    if (value == -1) {
+        std::cout << "Bitte wiederholen Sie Ihre Eingabe ...";
+    }
 
     // ============================
     // Ist ein Zeichen eine Ziffer (Zahl) oder nicht 

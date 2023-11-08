@@ -18,7 +18,9 @@ bool verifyDateFormat(std::string date)
         return false;
     }
 
-    int indices[]{ 0, 1, 3, 4, 6, 7, 8, 9 };
+    // Array mit allen Positionen der Ziffern
+    // Array with all positions of digits
+    int indices[8]{ 0, 1, 3, 4, 6, 7, 8, 9 };
 
     for (int i = 0; i < 8; ++i) {
 
@@ -29,12 +31,18 @@ bool verifyDateFormat(std::string date)
         }
     }
 
+    // Wäre noch zu tun:
+
+    // tt:  99  00 .. 31 oder 30 // Schaltjahr  //
+    // mm:  1 ..12
+    // jjjj:  5555   9999
+
     return true;
 }
 
 std::string dateToWord(std::string date)
 {
-    if (!verifyDateFormat(date)) {
+    if (! verifyDateFormat(date)) {
         return "";
     }
 
@@ -90,7 +98,7 @@ std::string dateToWord(std::string date)
     }
 
     // remove leading '0', if any
-    if (sDay.length() == 2 && sDay[0] == '0') {
+    if (sDay[0] == '0') {
         sDay = sDay[1];
     }
 
@@ -107,10 +115,10 @@ void testDateToWord()
     std::cout << std::boolalpha << verifyDateFormat("10.XX.4321") << std::endl;
 
     // test 'dateToWord'
-    std::string s = dateToWord("12.08.2000");
-    std::cout << s << std::endl;
+    //std::string s = dateToWord("12.08.2000");
+    //std::cout << s << std::endl;
 
-    s = dateToWord("01.11.2023");
+    std::string s = dateToWord("01.11.2023");
     std::cout << s << std::endl;
 }
 

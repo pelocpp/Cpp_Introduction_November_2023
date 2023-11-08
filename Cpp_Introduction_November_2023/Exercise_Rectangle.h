@@ -17,6 +17,7 @@ namespace Rectangle {
         double m_y;
         double m_width;
         double m_height;
+        int* ip;
 
     public:
         // c'tors

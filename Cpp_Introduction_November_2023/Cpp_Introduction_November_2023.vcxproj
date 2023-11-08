@@ -127,6 +127,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Dynamic.cpp" />
+    <ClCompile Include="Dynamic02.cpp" />
+    <ClCompile Include="DynamicArray.cpp" />
     <ClCompile Include="Exercise_BankAccount.cpp" />
     <ClCompile Include="Exercise_BankAccount_Test.cpp" />
     <ClCompile Include="Exercise_DynamicArray.cpp" />
@@ -145,6 +148,7 @@
   <ItemGroup>
     <ClInclude Include="AwesomeRectangle.h" />
     <ClInclude Include="BeautifulRectangle.h" />
+    <ClInclude Include="DynamicArray.h" />
     <ClInclude Include="Exercise_BankAccount.h" />
     <ClInclude Include="Exercise_DynamicArray.h" />
     <ClInclude Include="Exercise_Point.h" />

@@ -14,6 +14,7 @@ void testMalZwei();
 void referencesAndAddressOperator();
 void testOperators();
 void testString();
+void additionalTestString();
 
 void helloWorld()
 {
@@ -93,7 +94,8 @@ int main()
     //testTime();
     //testRectangle();
     //testOperators();
-    testString();
+    //testString();
+    additionalTestString();
 
     return 123;
 }

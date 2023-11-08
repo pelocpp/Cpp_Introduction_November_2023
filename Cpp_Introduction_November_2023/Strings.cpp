@@ -1,5 +1,22 @@
 #include <iostream>
 #include <string>
+#include <cctype>
+
+void additionalTestString()
+{
+    // Zeichenkette nach int umwandeln
+    // "12345"
+
+    std::string s ("12345");
+    int value = std::stoi(s);
+
+    // ============================
+    // Ist ein Zeichen eine Ziffer (Zahl) oder nicht 
+
+    char ch('5');
+
+    bool b = std::isdigit(ch);
+}
 
 void testString()
 {

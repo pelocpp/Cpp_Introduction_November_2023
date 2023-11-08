@@ -129,16 +129,23 @@
   <ItemGroup>
     <ClCompile Include="Exercise_BankAccount.cpp" />
     <ClCompile Include="Exercise_BankAccount_Test.cpp" />
+    <ClCompile Include="Exercise_DynamicArray.cpp" />
+    <ClCompile Include="Exercise_DynamicArray_Test.cpp" />
     <ClCompile Include="Exercise_Point.cpp" />
     <ClCompile Include="Exercise_Rectangle.cpp" />
     <ClCompile Include="Exercise_Rectangle_Test.cpp" />
+    <ClCompile Include="Namespaces.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="References_and_Pointers.cpp" />
     <ClCompile Include="Static.cpp" />
+    <ClCompile Include="Strings.cpp" />
     <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AwesomeRectangle.h" />
+    <ClInclude Include="BeautifulRectangle.h" />
     <ClInclude Include="Exercise_BankAccount.h" />
+    <ClInclude Include="Exercise_DynamicArray.h" />
     <ClInclude Include="Exercise_Point.h" />
     <ClInclude Include="Exercise_Rectangle.h" />
     <ClInclude Include="Math.h" />

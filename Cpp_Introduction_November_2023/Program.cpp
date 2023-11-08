@@ -1,9 +1,7 @@
 #include <iostream>   // system file: < >
-
-#include "Time.h"     // system file: < >
+#include "Time.h"     // user file:   " "
 
 #include "Math.h"
-
 
 void testPointers();
 void testReferences();
@@ -15,6 +13,7 @@ void testBankAccount3();
 void testMalZwei();
 void referencesAndAddressOperator();
 void testOperators();
+void testString();
 
 void helloWorld()
 {
@@ -80,7 +79,6 @@ void testOperators()
 
         std::cout << "Gleichheit";
     }
-
 }
 
 int main()
@@ -89,12 +87,13 @@ int main()
     //testMalZwei();
     //testBankAccount3();
     //testStatic();
-    // testBankAccount();
+    //testBankAccount();
     //testReferences();
     //helloWorld();
     //testTime();
     //testRectangle();
-    testOperators();
+    //testOperators();
+    testString();
 
     return 123;
 }

@@ -379,3 +379,129 @@ A) In der Klasse
 B) Als globale Funktion (friend)
 
 =========================================================
+
+Mittwoch:
+
+Pascal   // Zeiger // Häubchen
+
+=========================================================
+
+Ich möchte Klassen mit DEMSELBEN Namen haben zB. für
+
+  * Test
+  * Prototyp-Entwicklung
+  * Produktiv-Betrieb
+
+Da kommt es zu KONFLIKTEN // Ambiguity 
+
+Lösung: Klassen mit DEMSELBEN Namen in Namensräumen ablegen.
+
+Warum ist das eine Lösung:
+
+Die Klasse Rectangle heißt jetzt
+
+AwesomeRectangle::Rectangle
+
+oder
+
+BeautifulRectangle::Rectangle
+
+// ===============================================
+
+Ein- / Ausgabe   // Input / Output
+
+Konzept: Strom / Stream
+
+== Schreiben in einen Strom
+== Lesen aus einem Strom
+
+Idee: Abstraktion
+
+Strom:  Bildschirm (Konsole), Datei (File), Socket-Verbindung, Tastatur
+
+Idee:  Eines "sprechenden" operators // Speaking identifier: 
+
+
+int temperature;
+
+Operators:  <<,  >>    // Symbolic:   Pfeil // Schreiben in einen Strom
+
+Standard-Ströme // Standard- Streams:
+
+Konsole:  std::cout
+
+Keyboard: std::cin
+
+============================================================
+
+2 Tage:  Grundlagen gelernt
+
+Standard Template Bibliothek (Library): STL
+
+Zeichenketten:  "Viele Zeichen"
+
+Konzepte der OO:    std::string
+
+a) Konstruktoren:
+
+   Mit einem Parameter: Konstante Zeichenkette
+
+b) Operatoren:
+
+   << für Ausgabe vorhanden.
+
+c) getter:
+
+
+   int <=== size ()     // getSize
+   int <=== length ()   // getLength
+
+   BESSER:
+
+   size_t <=== size ()     // getSize
+   size_t <=== length ()   // getLength
+
+
+   bool  <=== empty();
+
+Was ist size_t ???
+
+Historie:   Eine Länge wie 10 Zeichen entspricht einem ganzzahligen Wert
+
+            int :
+
+            Puristen: ein int kann einen negativen Wert haben.
+
+            Lösing: Man hat in der "Neuzeit": Man wähle einen
+
+            integralen Datentyp OHNE Vorzeichen:  vorzeichenlos
+
+            unsigned int
+            size_t == unsigned __int64
+
+== Methoden:
+
+insert   // einfügen
+
+replace  // ersetzen
+
+append   // anhängen
+
+
+substr   // Eine Teilzeichenkette bestimmen  (  von ... wie viele // from .. count)
+
+== Operator: Verleichsoperator // Comparison Operator
+
+   Test auf Gleichheit: Test for equality
+
+[] Operator: Index-Operator
+
++ - Operator: to concatenate two strings // 2 Zeichenketten aneinanderhängen
+
+// append: Geht auch mit append:
+
+Oft: SAME Functionality either with a method or an operator
+
+     ( eqals // operator ==  )
+
+10:50 

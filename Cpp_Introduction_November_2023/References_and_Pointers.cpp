@@ -13,9 +13,27 @@ void malZwei(int number)
 
 // timesTwo: call-by-reference
 // NOTE: Only a single character ('&') must be added
+// geht nur in  C++
 void malZweiRef(int& number)
 {
     number = number * 2;
+}
+
+// timesTwo: call-by-address
+// geht in C bereits -- und damit auch in C++
+void malZweiPtr(int* number)
+{
+    int tmp;
+
+    tmp = *number;    // value-of // Gib mir den Wert "hinter" der Adresse 
+
+    tmp = tmp * 2;
+
+    *number = tmp;    // assign INDIRECT - to the location where the address is pointing to
+
+    // oder - kompakt
+
+    *number = *number * 2;
 }
 
 void testMalZwei()
@@ -32,6 +50,9 @@ void testMalZwei()
 
     std::cout << a << std::endl;
 
+    malZweiPtr(&a);
+
+    std::cout << a << std::endl;
 }
 
 void referencesAndAddressOperator()

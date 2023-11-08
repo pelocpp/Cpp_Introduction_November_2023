@@ -2,10 +2,6 @@
 // DynamicArray.cpp
 // ===========================================================================
 
-// https://medium.com/@jcapona/dynamic-array-implementation-cpp-9deadaf1ba8e
-
-// https://codereview.stackexchange.com/questions/234556/dynamic-array-implementation-in-c
-
 #include <stdexcept>
 
 #include "Exercise_DynamicArray.h"
@@ -17,10 +13,15 @@ DynamicArray::DynamicArray()
     m_data = nullptr;
 }
 
-DynamicArray::DynamicArray(int size)
+DynamicArray::DynamicArray(size_t size)
 {
     m_size = size;
     m_data = new int[size];
+
+    // initialize buffer with default values
+    for (int i = 0; i < m_size; ++i) {
+        m_data[i] = 0;
+    }
 }
 
 DynamicArray::~DynamicArray()
@@ -29,13 +30,47 @@ DynamicArray::~DynamicArray()
 }
 
 // getter / setter
-int DynamicArray::size() const
+size_t DynamicArray::size() const
 {
     return m_size;
 }
 
+// public interface
+void DynamicArray::print()
+{
+    for (size_t i = 0; i < m_size; ++i) {
+        std::cout << m_data[i] << ' ';
+    }
+    std::cout << std::endl;
+}
+
+void DynamicArray::resize(size_t newSize)
+{
+    // allocate new buffer
+    int* data = new int[newSize];
+
+    size_t minSize = (newSize <= m_size) ? newSize : m_size;
+
+    // copy old buffer into new one
+    for (size_t i = 0; i < minSize; ++i) {
+        data[i] = m_data[i];
+    }
+
+    // initialize rest of buffer, if any, with default values
+    for (size_t i = m_size; i < newSize; ++i) {
+        data[i] = 0;
+    }
+
+    // release old buffer
+    delete[] m_data;
+
+    // switch to new buffer
+    m_size = newSize;
+    m_data = data;
+}
+
 // operators
-int& DynamicArray::operator[] (int index)
+int& DynamicArray::operator[] (size_t index)
 {
     if (index >= m_size) {
         throw std::out_of_range("Array index out of bounds");
@@ -64,9 +99,6 @@ bool operator!= (const DynamicArray& left, DynamicArray right)
 {
     return ! (left == right);
 }
-
-
-
 
 // ===========================================================================
 // End-of-File

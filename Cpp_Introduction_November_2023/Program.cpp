@@ -16,6 +16,7 @@ void testOperators();
 void testString();
 void additionalTestString();
 void testDateToWord();
+void testDynamicArray();
 
 void helloWorld()
 {
@@ -96,7 +97,9 @@ int main()
     //testRectangle();
     //testOperators();
     //testString();
-    // additionalTestString();
+    //additionalTestString();
+    //testDynamicArray();
+    
     testDateToWord();
 
     return 123;

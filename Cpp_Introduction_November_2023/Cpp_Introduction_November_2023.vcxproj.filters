@@ -100,6 +100,7 @@
     <None Include="Exercise_Rectangle.md" />
     <None Include="Exercise_Bankkonto.md" />
     <None Include="Exercise_Zeichenketten.md" />
+    <None Include="Exercise_Mehrere_Bankkonten.md" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\Notizen.txt" />
@@ -115,6 +116,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="..\New_02.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Bankkonto_Zinssatz.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

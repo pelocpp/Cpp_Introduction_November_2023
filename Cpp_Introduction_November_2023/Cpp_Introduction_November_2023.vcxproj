@@ -158,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Exercise_Bankkonto.md" />
+    <None Include="Exercise_Mehrere_Bankkonten.md" />
     <None Include="Exercise_Rectangle.md" />
     <None Include="Exercise_Zeichenketten.md" />
   </ItemGroup>
@@ -169,6 +170,7 @@
     <Image Include="..\DynamicArray_02.png" />
     <Image Include="..\New_01.png" />
     <Image Include="..\New_02.png" />
+    <Image Include="Bankkonto_Zinssatz.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

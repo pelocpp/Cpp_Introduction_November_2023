@@ -134,6 +134,7 @@
     <ClCompile Include="Exercise_BankAccount_Test.cpp" />
     <ClCompile Include="Exercise_DynamicArray.cpp" />
     <ClCompile Include="Exercise_DynamicArray_Test.cpp" />
+    <ClCompile Include="Exercise_Mehrere_Bankkonten.cpp" />
     <ClCompile Include="Exercise_Point.cpp" />
     <ClCompile Include="Exercise_Rectangle.cpp" />
     <ClCompile Include="Exercise_Rectangle_Test.cpp" />

@@ -975,3 +975,5 @@ Es werden in einer Schnittstelle Vorgaben für Methoden gemacht.
 
 Entkopplung von Software - Modulen.
 
+// ===============================================================
+

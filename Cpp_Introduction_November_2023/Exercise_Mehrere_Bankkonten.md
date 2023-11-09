@@ -25,7 +25,8 @@ und `getBalance` (Kontostand) eingeholt werden.
 Da das Bankinstitut mehrere Arten von Konten seinen Kunden anbietet,
 ist der Klassenentwurf in mehreren Ebenen zu gestalten:
 
-  * Schnittstelle `IAccount` &ndash; Beschreibung der Methoden der Klasse `Account`.
+  * Schnittstelle `IAccount` &ndash; Beschreibung der Methoden der Klasse `Account`.<br />
+    Oder anders formuliert: Was sollten alle Realisierungen einer Konto-Klasse für Methoden haben?
   * Klasse `Account` &ndash; Teilweise Realisierung der Methoden der Klasse `Account` &ndash; Beschreibung siehe weiter unten.
   * Klassen `CurrentAccount` (Girokonto), `StudentsAccount` und `DepositAccount` (Sparbuch).
 

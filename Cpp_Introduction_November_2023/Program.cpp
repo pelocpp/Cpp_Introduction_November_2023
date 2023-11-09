@@ -19,6 +19,7 @@ void testDateToWord();
 void testDynamicArray();
 void testDynamic();
 void dynamicDataExample();
+void testInheritance();
 
 void helloWorld()
 {
@@ -88,7 +89,7 @@ void testOperators()
 
 int main()
 {
-    std::cout << "Begin" << std::endl;
+    // std::cout << "Begin" << std::endl;
 
     //referencesAndAddressOperator();
     //testMalZwei();
@@ -104,11 +105,12 @@ int main()
     //additionalTestString();
     //testDynamicArray();
     // testDynamic();
-    dynamicDataExample();
+    //dynamicDataExample();
+    testInheritance();
     
     //testDateToWord();
 
-    std::cout << "End" << std::endl;
+    //std::cout << "End" << std::endl;
 
     return 1;
 }

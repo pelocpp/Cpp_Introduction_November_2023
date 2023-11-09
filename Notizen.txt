@@ -623,3 +623,355 @@ Konstruktoren werden bei der Objekterzeugung mit NEW gerufen.
 Destruktoren werden beim Aufruf von delete gerufen.
 
 // ================================================
+
+Vererbung:
+----------
+
+Überlegung:  SW - Design
+
+Klasse Rectangle:  In einem 2-dim graph. System
+
+
+Klasse CororedRectangle:  Klasse in einem 2-dim graph. System,
+                          die Farben kennt.
+
+Aussage:
+--------
+
+CororedRectangle hat in der Beschreibung mehr Daten als das Rechteck.
+
+Ein CororedRectangle ist ein Rechteck.
+
+A CororedRectangle "is a" Rectangle.
+
+Aussage:
+--------
+
+Das Prinzip der Vererbung kann nicht IMMER eingesetzt werden:
+Der Compiler ist hier keine Hilfestellung.
+
+Ein CororedRectangle ist ein Rechteck.
+
+==> "ist ein":  Beziehungen zwischen Klassen // Relationship // Modellierung.
+
+    "is a" Relationship
+
+2. Beispiel:
+
+Klasse Point (Punkt):
+
+Klasse Line (Linie):
+
+== A Point is a part of a Line
+== Ein Punkt ist ein Teil einer Linie
+
+== Ein Linie besteht aus mindestens zwei Punkten
+
+Lösung: 
+
+==> Eine Linie hat zwei Punkte (Anfangs- und Endpunkt)
+
+==  A line has two points
+
+==> "hat ein":  Beziehungen zwischen Klassen // Relationship // Modellierung.
+
+    "has a" Relationship
+
+Wozu:  Zur Klärung, welche Instanzvariablen soll meine Klasse haben ?
+
+class Line {
+
+    // member data
+    Point m_begin;
+    Point m_end;
+    ....
+}
+
+class Student {
+
+   std::string m_firstName;
+   std::string m_lastName;
+   std::string m_matrikelNummer;
+
+   // Adresse
+
+   // Noten ???
+
+   // Semester ???
+
+   // Studienfach ???
+}
+
+// ========================================================
+
+Vererbung:
+
+Nur, wenn ist-ein Beziehung erfüllt ist.
+
+// ========================================================
+
+Wozu / Why Vererbung / Inheritance:
+
+Source-Code wiederverwenden.  // Re-Use existung software
+
+== Suche nach Fehler ...
+== Funktionalität ergänzen ...
+
+// ========================================================
+
+Achtung:
+
+Bei der Vererbung sind
+
+KONSTRUKTOREN
+
+NICHT DABEI.
+
+// constructors are NOT inherited.
+
+==============================================================
+
+Eine Methode mit DEMSELBEN Namen in der Vaterklasse und Kindklasse:
+
+A) Geht.
+
+B) Overriding // überschreiben:
+
+Am Rand // Bemerkung:
+
+überschreiben: 
+
+Anekdote:  Es gab einmal ein Buch über C++ in ENGLISCH
+
+Der erste, deutsche Übersetzer hat das Wort override mit "überschreiben" übersetzt.
+
+====> Alle anderen haben dies übernommen // abgeschrieben.
+
+FALSCH // irreführend
+
+schreiben:  to write
+
+überschreiben:  overwrite
+
+
+to overRIDE
+
+sich über etw. hinwegsetzen
+gegen etw. vorgehen
+Vorrang vor etw. haben
+
+
+VORSICHT: Das Überschreiben führt zum VERDECKEN // Hidung, to Hide 
+
+========================================================
+
+Wiederverwendung:   // Re-Use
+
+EG calling methods of the Base Class
+
+
+========================================================
+
+Vererbung:
+
+Die Vererbung in der Objekt-Orientierung hat 3 "Ausprägungen":
+
+Inheritance exists in 3 "Flavours":
+
+
+A) Methode ist in der Vaterklasse vorhanden - und NICHT in der Kindklasse:
+
+Die Kindklasse "erbt" eine Methode.
+
+Child class INHERITS a Method.
+
+
+B) Methode ist in der Vaterklasse vorhanden - und wird in der Kindklasse überschrieben:
+
+Die Kindklasse ersetzt die Methode in der Vaterklasse.
+Die Kindklasse tauscht die Methode in der Vaterklasse aus.
+
+The Child Class REPLACES the method of the Base Class.
+
+Hmmmm // will ich das ??? // Code Smell // Vorsicht: Könnte auch auf Fehler hindeuten.
+
+
+C) Methode ist in der Vaterklasse vorhanden - wird in der Kindklasse überschrieben 
+
+   und die Methode der Vaterklasse wird von der Kindklasse aus aufgerufen !!
+
+
+Child Class overrides method of the Base Class and calls the method of the Base class:
+
+
+Die Kindklasse ERWEITERT die Methode der Basisklasse.
+Die Kindklasse ERGÄNZT die Methode der Basisklasse.
+
+The Child Class EXTENDS the corresponding method of the Base Class.
+
+=========================================================================
+
+
+Ausgangssituation:
+
+
+2 Klassen in einer Hierarchie:
+
+Eine Methode 'draw' in der Vater- und in der Kind-Klasse:
+
+Feature: Vererbung.
+
+Virtuelle Methodenaufruf Mechanismus:
+
+Virtual Method Invocation Mechanims:
+
+Was bedeutet das:
+
+== Aufruf einer Methode: Kann zur Übersetzungs-Zeit festgelegt werden.
+                                  Compile-Time
+
+== Aufruf einer Methode: Kann zur Laufzeit-Zeit festgelegt werden.
+                                  Runtime
+
+
+== Compile-Time: Early-Binding
+
+== Runtime: Late-Binding
+
+Vorteil // Nachteil:
+
+Performance:
+
+
+Early-Binding:
+
+DIREKTER AUFRUF
+
+00007FF7C3A4D28F  mov         rcx,qword ptr [rp]  
+00007FF7C3A4D293  call        Rectangle::draw (07FF7C3A41B77h)  
+
+
+versus
+
+Late-Binding:
+
+INDIREKTER AUFRUF
+
+00007FF6B120D28F  mov         rax,qword ptr [rp]  
+00007FF6B120D293  mov         rax,qword ptr [rax]  
+00007FF6B120D296  mov         rcx,qword ptr [rp]  
+00007FF6B120D29A  call        qword ptr [rax]  
+
+Wo steht die Adresse der Methode:
+
+Tabellen:  vtable // virtual function pointer table
+
+
+Why ???????????????????????????????????????????????
+
+Mit Virtuellen Methoden kann ich 
+
+A) Container (Array) von Adressen von vielen verschiedenen Objekten bilden.
+
+B) Auf Grund der Hierarchie:  Typ der Elemente ist vom Basisklassentyp (Pointer/Referenz)
+
+C) Es werden über EINEN Methodennamen UNTERSCHIEDLICHE Methoden aufgerufen.
+   (virtual)
+
+Viele:  Griechisch:    POLY
+
+die Gestalt:  Griechisch: Körper:  MORPHUS
+
+Polymorphismus
+
+Aber / Vorsicht:
+
+Ein Zeiger der Basisklasse:
+
+Auch wenn in der Kindklasse viele, andere Methoden vorhanden sind:
+
+Über den Zeiger der Basisklasse erreiche ich AUSSCHLIEßLICH die
+Methoden der Vaterklasse !!!
+
+// ===============================================================
+
+Design:
+
+SW-Entwurf:   Konzepte der OO Programmierung unterstützen das Design.
+
+== Abstrakte Basisklasse
+
+== Schnittstellenkonzept
+
+// ===============================================================
+
+    Rectangle
+
+    ColoredRectangle
+    TransparentRectangle
+    RoundRectangle
+
+Rectangle:
+
+==> Helfer - Klasse:
+
+== Sie verwaltet gemeinsame Daten ALLER Rechtecke (x, y, width, height)
+
+== Sie besitzt / vererbt Methoden, die für alle Kindklassen eine Unterstützung sind
+
+== Von der Helfer - Klasse sollte man KEIN Objekt anlegen können.
+
+== Sie macht VORGABEN für das Design der Kindklassen: 
+
+   She makes rules for the Design of Child Classes:
+
+   Contract // Rule
+
+   EG: Which methods child classes should have !!!
+   Welche Methoden sollten KINDKLASSEN haben.
+   Example: draw
+
+IN UNSEREM BEISPIEL: draw ergibt KEINEN Sinn for Rectangle
+
+
+Wie kann eine Basisklasse  Vorgaben für Kindeklassen machen:
+
+    virtual void draw() = 0;
+
+==> Damit eine Kindklasse instanziiert werden kann,
+ 
+    muss die draw-Methode vorhanden / realisiert sein !!!!
+
+
+Fazit:  Eine derartige Helfer-Klasse wird als ABSTRAKTE KLASSE bezeichnet.
+
+
+Andere Formulierung: Eine abstrakte Klasse ist eine UNVOLLSTÄNGIGE KLASSE.
+
+
+// ===============================================================
+
+==  VORGABEN für das Design der Kindklassen: 
+
+   Contract // Rule:
+
+   Beispiel: draw  // abstrakte Methode // nicht-vorhanden,
+
+            aber Klassen, die den Vertrag mit der Basisklasse eingehen,
+            müssen draw realisieren.
+
+Interface Concept:
+
+Schnittstellenkonzept:
+
+Es werden in einer Schnittstelle Vorgaben für Methoden gemacht.
+
+
+// ===============================================================
+
+// Was kann ich mit einer Schnittstelle anfangen
+
+===>   Fabrik
+
+Entkopplung von Software - Modulen.
+

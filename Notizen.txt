@@ -1333,4 +1333,59 @@ Compact, compact syntax:  [  a_name = preset_value ]  ======> declared an instan
 
 // ============================================================
 
-13:15
+Übung:
+
+a) std::vector
+
+   push_back
+
+   std::for_each
+
+b) std::vector
+
+   std::generate vorbelegen
+
+   >> Funktor // Callable Object:   "merken kann" // "store something in the state" // member data
+
+   Lambda not required
+
+
+A) Zahlenfolge:
+
+   
+
+   int n ; start value eg 7
+   Next Element of this sequence:
+
+   ===> a) n is even:    n = n / 2
+   ===> n) n is uneven:  n = 3 * n + 1
+
+   Example: 7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1, // 4, 2, 1
+
+   Aussage: Die Folge endet mit dem Wert 1.
+
+   Berechnung dieser Wert eher in einer STL-freie Zone.
+
+   std::vector: DIent dem Zweck die Folge abzuspeichern.
+
+B) Fibonacci
+
+Achtung:
+
+    std::vector<int> vec;
+
+    vec.resize(20);  ==>  Dies bedeutet, dass in std::generator das "Callable Object"
+
+    20 Mal aufgerufen wird
+
+    ==> die ersten 20 Werte berechnet werden.
+
+
+
+
+
+
+
+
+
+

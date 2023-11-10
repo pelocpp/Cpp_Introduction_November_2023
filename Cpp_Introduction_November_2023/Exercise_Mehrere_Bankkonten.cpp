@@ -6,13 +6,12 @@
 
 namespace AccountsAndBank {
 
+    // Vertrag // Kontrakt
     class IAccount
     {
     public:
-        virtual ~IAccount() {};
-
         // getter/setter
-        virtual double getAccountNumber() = 0;
+        virtual double getAccountNumber() = 0;   // = 0  // nicht implementiert // abstrakt
         virtual double getBalance() = 0;
 
         // public interface
@@ -23,6 +22,7 @@ namespace AccountsAndBank {
 
     // ===========================================================================
 
+    // Abstrakte Basisklasse
     class Account : public IAccount
     {
     protected:
@@ -32,11 +32,10 @@ namespace AccountsAndBank {
     public:
         // default c'tor / d'tor
         Account(int account);
-        virtual ~Account() {};
 
         // getter / setter
-        double getAccountNumber() final override;
-        double getBalance() final override;
+        double getAccountNumber() final  override;
+        virtual double getBalance() final override;
 
         // public interface
         void deposit(double amount) final override;

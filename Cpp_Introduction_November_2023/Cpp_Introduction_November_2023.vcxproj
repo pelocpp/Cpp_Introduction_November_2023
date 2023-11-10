@@ -142,6 +142,7 @@
     <ClCompile Include="Namespaces.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="References_and_Pointers.cpp" />
+    <ClCompile Include="Schablonen.cpp" />
     <ClCompile Include="Static.cpp" />
     <ClCompile Include="Strings.cpp" />
     <ClCompile Include="Time.cpp" />

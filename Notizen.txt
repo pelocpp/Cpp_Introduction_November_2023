@@ -977,3 +977,130 @@ Entkopplung von Software - Modulen.
 
 // ===============================================================
 
+Nachtrag:
+
+    class Account : public IAccount
+
+Hmm, in C++ gibt es mehrere Arten der Vererbung:
+
+    class Account : private IAccount
+    class Account : protected IAccount
+
+    class Account : public IAccount      // öffentliche Vererbung
+
+
+
+To keep it simple:
+
+In allen anderen gängigen Programmiersprachen:
+
+// ===============================================================
+
+Nachtrag:
+
+virtual in der Basisklasse:
+
+Muss ich es dann in der Kindklasse auch hinschreiben ???
+
+a) Müssen nicht:  "Einmal virtual - immer virtual"
+
+
+Die Schlüsselwörter override und final tragen zur besseren
+
+Qualität der Software bei !!!
+
+// ===============================================================
+
+
+Idee:
+
+A) IAccount:  Beschreibt die Methoden aller Konten
+
+   Kontrakt
+
+b) Class Account:  Helfer-Klasse / Abstrakt
+
+        int m_accountNumber;
+        double m_balance;
+
+    Nicht: Zinsen, Dispo, ......
+
+    Methoden:
+
+    getter:
+        // passt hier !!!
+        double getAccountNumber() final  override;
+        double getBalance() final override;
+
+    Frage:
+    Welche der anderen Methoden ???
+
+    Einzahlen und Abheben:
+    == Einzahlen:   geht immer
+    == Abheben:     Geht hier nicht, weil es vom Kontotyp abhängt.
+
+c) Konkrete Klassen
+
+Vollständig:  print und withdraw vorhanden
+
+
+======================================================
+
+Templates // Schablonen:
+
+Paradigmen:
+
+== Objekt-Orientierung
+== Prozedurale Programmierung (  geerbt by C)
+== Generische Programmierung (Idee von Alexander Stepanov)
+
+Nebenby:
+
+Bjarne Stroustrup:  Erfinder von C++
+Alexander Stepanov: Generische Programmierung
+
+Stroustrup: "C with Classes", nehme deine Ideen für die Bibliothek.
+
+
+======================================================
+
+Idee der Generische Programmierung:
+
+A)
+Man erstelle Klassen nicht mit realen, konkreten Datentypen,
+
+sondern mit Stellvertretern für einen jeweiligen Datentyp.
+
+Keine konkrete Klasse, sondern eine Vorlage für eine konkrete Klasse
+
+Vorlage:  Schablone // Template
+
+
+
+B)
+Konkrete Klasse  ==> Muss dem Stellvertreter einen konreten Typ zuweisen / zuordnen.
+
+
+Wenn für ein T eine Methode / eine Klasse nicht passt:
+
+Explizit Template Spezialsierung:
+
+Am Beispiel des Taschenrechners für T == int und die Methode div:
+
+2 Möglichkeiten:
+
+a) die ganze Klasse
+
+b) nur eine oder mehrere Methoden
+
+
+
+
+
+
+
+
+
+
+
+

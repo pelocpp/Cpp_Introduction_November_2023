@@ -138,6 +138,7 @@
     <ClCompile Include="Exercise_Point.cpp" />
     <ClCompile Include="Exercise_Rectangle.cpp" />
     <ClCompile Include="Exercise_Rectangle_Test.cpp" />
+    <ClCompile Include="Exercise_STL.cpp" />
     <ClCompile Include="Exercise_Zeichenketten.cpp" />
     <ClCompile Include="Namespaces.cpp" />
     <ClCompile Include="Program.cpp" />

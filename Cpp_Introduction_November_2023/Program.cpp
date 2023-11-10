@@ -23,6 +23,7 @@ void testInheritance();
 void testBankkontenUndVererbung();
 void testTemplates();
 void testSTL();
+void testExerciseSTL();
 
 void helloWorld()
 {
@@ -92,8 +93,6 @@ void testOperators()
 
 int main()
 {
-    // std::cout << "Begin" << std::endl;
-
     //referencesAndAddressOperator();
     //testMalZwei();
     //testBankAccount3();
@@ -107,16 +106,15 @@ int main()
     //testString();
     //additionalTestString();
     //testDynamicArray();
-    // testDynamic();
+    //testDynamic();
     //dynamicDataExample();
     //testInheritance();
-    // testBankkontenUndVererbung();
+    //testBankkontenUndVererbung();
     //testTemplates();
-    testSTL();
-    
+    //testSTL();
     //testDateToWord();
 
-    //std::cout << "End" << std::endl;
+    testExerciseSTL();
 
     return 1;
 }

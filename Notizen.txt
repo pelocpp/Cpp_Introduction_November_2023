@@ -4,6 +4,8 @@ Einführung in C++
 
 Peter Loos
 
+peter.loos@gmx.de
+
 =====================================
 
 So zwischen 12 und 13 Uhr
@@ -1381,11 +1383,52 @@ Achtung:
     ==> die ersten 20 Werte berechnet werden.
 
 
+================================================================
+
+Ein ganz anderer Container
+==========================
+
+Was ist eine Hash Tabelle
+
+Datenstruktor
+
+Telefonbuch:
+
+Namen: "Hans"
+Nummer: 123456
+
+Fremdsprachenlexikon:
+
+Deutsch: "Guten Morgen"
+Italienisch: "Buon Giorno"
+
+Abbildung:   Wert -> Wert
+
+             Key (Schlüssel) ==> Wert (Value)
+
+Telefonbuch:
+
+class Entry
+{
+    std:string m_name;
+    int        m_number;
+}
+
+std::vector<Entry> book;
+
+Permance:
 
 
+Telefonbuch: 100000 Einträge  
+
+Suchen : in einem Vektor (Array): VOM Anfang an.   ist INEFFIZIENT !!!
+
+We can do better !!!!
+
+Wie sucht man nach "Hans" in einer Hash Tabelle ???
+
+Da wird bzgl. des Namens (Keys) ein INDEX berechnet !!!
 
 
-
-
-
+Hashtabelle:  Dictionary 
 

@@ -111,10 +111,10 @@ int main()
     //testInheritance();
     //testBankkontenUndVererbung();
     //testTemplates();
-    //testSTL();
+    testSTL();
     //testDateToWord();
 
-    testExerciseSTL();
+    //testExerciseSTL();
 
     return 1;
 }

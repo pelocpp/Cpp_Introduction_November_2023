@@ -1,5 +1,9 @@
 #include <iostream>
 #include <string>
+#include <unordered_map>
+#include <map>
+
+#include  <utility>
 
 #include <vector>
 #include <algorithm>
@@ -326,7 +330,84 @@ void testSTL10()
     );
 }
 
+
+// ==========================================================
+
+
+// Telefonbuch:
+
+//class Entry
+//{
+//    std:string m_name;
+//    int        m_number;
+//}
+
+
+class PhonebookHelper
+{
+public:
+    void operator () (std::pair <std::string, int> entry) {
+
+        std::cout << entry.first << " - " << entry.second << std::endl;
+
+    }
+};
+
+void testSTL20()
+{
+    // Hashtabelle in C++:
+
+    //  std::unordered_map<std::string, int> phoneBook;
+
+    std::map<std::string, int> phoneBook;    // Was ist die Map:  
+
+    // Wie wird ein Eintrag eingefügt:
+    std::pair <std::string, int> firstEntry ("Hans", 123456);
+    phoneBook.insert(firstEntry);
+
+    std::pair <std::string, int> secondEntry("Sepp", 654321);
+    phoneBook.insert(secondEntry);
+
+    std::pair <std::string, int> thirdEntry("Anton", 223355);
+    phoneBook.insert(thirdEntry);
+
+
+    // Ausgabe des Telefonbuchs in der Konsole
+    PhonebookHelper helper;
+
+    std::for_each(
+        phoneBook.begin(),
+        phoneBook.end(),
+        helper
+    );
+
+    // Wir suchen nach einem Eintrag
+
+    std::string key("Sepp");
+
+    // std::unordered_map<std::string, int>::iterator  position = phoneBook.find(key);
+
+    std::map<std::string, int>::iterator  position = phoneBook.find(key);
+
+    if (position == phoneBook.end()) {
+
+        std::cout << "Name " << key << " not found in the Phonebook" << std::endl;
+    }
+    else {
+
+        std::cout << "Name " << key << " found: ";
+
+        std::pair <std::string, int> foundEntry = *position;
+
+        int number = foundEntry.second;
+
+        std::cout << number << std::endl;
+
+    }
+
+}
+
 void testSTL()
 {
-    testSTL09();
+    testSTL20();
 }

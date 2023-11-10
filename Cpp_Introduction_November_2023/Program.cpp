@@ -22,6 +22,7 @@ void dynamicDataExample();
 void testInheritance();
 void testBankkontenUndVererbung();
 void testTemplates();
+void testSTL();
 
 void helloWorld()
 {
@@ -110,7 +111,8 @@ int main()
     //dynamicDataExample();
     //testInheritance();
     // testBankkontenUndVererbung();
-    testTemplates();
+    //testTemplates();
+    testSTL();
     
     //testDateToWord();
 

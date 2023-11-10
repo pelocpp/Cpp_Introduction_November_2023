@@ -144,6 +144,7 @@
     <ClCompile Include="References_and_Pointers.cpp" />
     <ClCompile Include="Schablonen.cpp" />
     <ClCompile Include="Static.cpp" />
+    <ClCompile Include="STL.cpp" />
     <ClCompile Include="Strings.cpp" />
     <ClCompile Include="Time.cpp" />
     <ClCompile Include="Vererbung.cpp" />

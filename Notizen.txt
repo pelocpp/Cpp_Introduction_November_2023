@@ -14,6 +14,36 @@ C/C++    Java  C#  Mobile Programming
 
 =====================================
 
+Unterlagen:
+
+Allgemeine:
+
+https://github.com/pelocpp
+
+Für dieses Seminar:
+
+https://github.com/pelocpp/Cpp_Introduction_November_2023
+
+Immer verfügbar:
+================
+
+https://github.com/pelocpp/cpp_introduction
+
+Noch ein Repository:
+
+Viele einführende Beispiele:
+
+https://github.com/pelocpp/cpp_basic_examples
+
+
+Für Studierende und Liebhaber von C++ :)
+
+https://peterloos.de/
+
+=====================================
+
+
+
 2 Tools:
 
 a) Visual Studio C++
@@ -1094,13 +1124,213 @@ a) die ganze Klasse
 b) nur eine oder mehrere Methoden
 
 
+=============================================================
+
+Die Standardbibliothek:
+
+Alexander Stepanov:
+
+== Container
+== Iteratoren
+== Algorithmen
+== Funktor (Lambda)
+
+== STL: Eigene Stilistik
+
+Grund:  Verschiedene Container für Daten.
+
+Beispiel: Das C/C++ Array (Fixed Length)
+
+   ==> Weiteres Array: Vektor (Length arbitrary)
+   
+   ==> Set (Menge): Sammelt Daten, aber keine "doppelten"
+
+   ==> Bäume (Trees), Hash Tabellen, Listen, ...
+
+Eigene Stilistik: Stellt eine Verallgemeinerung für all diese Container dar.
+
+Stellt eine Abstraktion dar.
+
+======================
+
+Erstes Beispiel:
+
+    for (int i = 0; i < vec.size(); ++i) {
+
+        std::cout << i << ": " << vec[i] << std::endl;
+    }
+
+Hat vor dem Hintergrund der Bibliothek EINEN GRAVIERENDEN Nachteile:
+
+Index-Operator:  für einen Baum:  tree [3]
+
+=================================================================================
+
+Für den allgemeinen Zugriff auf einen Container musste - als Ersatz für den Index - 
+
+ein allgemeineres Konzept erfunden werden:
+
+Name:  Iteratoren Konzept
+
+=================================================================================
+
+Was ist ein Iterator
+
+What is an Iterator:
+
+>>> Objekt / Object
+
+>>> Ein Iterator beschreibt eine POSITION.
+
+(( Nicht verwechseln: Eine POSITION ist nicht zu verwechseln mit dem ELEMENT an dieser Position ))
+
+Wie komme ich an so einen Iterator:
+
+Für die erste Kontaktaufnahme mit einem Container
+gibt es ZWEI Iteratoren:
+
+>> Anfang / Begin
+>> End / End
+
+Beachte: End ist eine Position NACH DEM LETZEN ELEMENT  ("Nirvana")
+
+Wie geht es weiter ???
+
+Jeder Iterator besitzt Methoden / Operatoren:
+
+i) operator ++:    Geht von einer Position zur nächsten.
+
+ii) operator *:   Liefert den Wert an der Position zurück. 
+                  Returns Value at this Position
+
+    Anmerkung: a) Dieser operator* HAT NICHTS MIT einem Pointer/ Zeiger zu tun (Derefenzieren)
+               b) ABER: Es soll natürlich eine ANALOGY vorhanden sein.
+
+iii)  Zwei Positionen vergleichen / Comparing two positions:
+
+operator ==, !=:
+
+
+
+Von welchem Typ ist ein Iterator ?????????????????
+
+a) class Iterator       Hmmm: Container:  std::vector <INT>
+
+b) class Iterator<T>    Hmmm: Intern sind ein Vektor und ein Tree komplett verschieden
+
+c) Jeder Container muss seine eigene Realisierung eines Iterators MITBRINGEN.
+
+  Typ des Iterators ist IN DER KLASSE des Containers definiert.
+
+  Example:  std::vector<int>::iterator
+
+// ============================================================
+
+== Algorithmen // Algorithm
+
+Einfache Abläufe, um mit einem Container etwas zu tun:  Traversieren, Suchen , kopieren, umwandeln,
+
+1. Example: Traversal
+
+
+// ============================================================
+
+
+std::vector:
+
+newCapacity = oldCapacity * 1.5;
+
+// ============================================================
+
+    for (int i = 0; i < 100; ++i) {
+        vec[i] = 1;
+    }
+
+    // Or
+
+    std::fill(vec.begin(), vec.end(), 2);
+
+
+    PERFORMANCE ===> Choose 2. Alternative !!!!!!!!!!!!
+
+>>> std::memset
+
+>>> Zum Beispiel:
+ 
+    The REP prefixes apply only to one string instruction at a time. To repeat a block of instructions, use the LOOP instruction or another looping construct. 
+
+// ============================================================
+
+Algorithmen:
+
+Häufig:
+
+== Algorithmen haben eine Funktion als Parameter für eine bestimmte Rechenverarbeitung.
+
+== Beispiel:
+
+int func() {
+
+    static int i = -1;
+    ++i;
+    return 2 * i + 1;
+}
+
+Dies ist eine machbare Lösung, ABER:
+
+Sie ist unschön, WHY:
+
+Irgenwie werden globale Variablen benötigt (==> Zustand // State) ,
+aber globale Variablen sind NICHT SCHÖN.
+
+
+C++ // OO:
+
+2. Ansatz:
+
+Wir wechseln zu einer Klasse:
+
+Diese Klasse besitzt eine Methode, die - wie die globale Funktion - 
+die Berechung des nächsten Werts vornimmt.
+
+Problem: Whats the name of this method ??????????
+
+Answer: We DON'T use a method, we use an operator 
+
+Deutsch: Aufruf-Operator
+
+Englisch: Function Call Operator () 
 
 
 
 
+Nomenklatur:
+
+Besitzt / Implementiert ein Objekt / eine Klasse den  Aufruf-Operator,
+
+spricht man von so genannten "aufrufbaren Objekte"
+
+==> Callable Objects  // Funktor // functor
 
 
+// ============================================================
 
+Ausblick:  Funktor bzw. Callable Object VERSUS Lambda
 
+>> Sprung nach Modern C++: Ab C++ 11 und höher
 
+Erweiterung von C++ ab dem Jahr 2011
 
+Wording:
+
+"Lambda Function"
+
+In my Wording:  WRONG
+
+"Lambda Object" !!!!!!!!!!!!! ===> There can be instance variables.
+
+Compact, compact syntax:  [  a_name = preset_value ]  ======> declared an instance variable 'a_name'
+
+// ============================================================
+
+13:15
